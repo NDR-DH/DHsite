@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dawson House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --deep-slate: #2F3235; --warm-white: #F6F4F1; --charcoal: #1F1F1F;
+  --soft-slate: #3E4A59; --deep-teal: #335D63; --soft-teal: #2B4F55;
+  --mist-teal: #8EA2B0; --greige: #CFC7BA; --light-grey: #D9DADA; --brass: #A38F6D;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--warm-white); color: var(--deep-slate); font-family: var(--font-body); font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 28px 56px; background: var(--warm-white); border-bottom: 1px solid transparent; transition: border-color 0.4s, background 0.4s; }
+nav.scrolled { border-color: var(--light-grey); background: rgba(246,244,241,0.96); backdrop-filter: blur(12px); }
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo svg { width: 24px; height: auto; }
+.nav-wordmark { font-family: var(--font-display); font-size: 17px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--deep-slate); }
+.nav-links { display: flex; align-items: center; gap: 44px; list-style: none; }
+.nav-links a { font-family: var(--font-body); font-size: 12px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--deep-slate); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
+.nav-links a:hover { opacity: 1; }
+.nav-links .nav-contact { opacity: 1; color: var(--deep-teal); }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 56px 88px; position: relative; overflow: hidden; }
+.hero-bg-mark { position: absolute; top: 50%; right: -60px; transform: translateY(-56%); width: 44vw; max-width: 680px; opacity: 0.028; pointer-events: none; }
+.hero-content { max-width: 780px; animation: fadeUp 1s cubic-bezier(0.65,0,0.35,1) 0.2s both; position: relative; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(48px, 6.5vw, 92px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); margin-bottom: 32px; }
+.hero-sub { font-size: 17px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); max-width: 520px; margin-bottom: 52px; }
+.hero-prompt { display: flex; align-items: center; gap: 18px; font-family: var(--font-display); font-size: 19px; font-style: italic; font-weight: 300; color: var(--deep-slate); opacity: 0.5; user-select: none; }
+.hero-prompt-line { width: 36px; height: 1px; background: var(--brass); flex-shrink: 0; }
+
+.diagnostic { padding: 80px 56px; max-width: 740px; }
+.diagnostic p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+.diagnostic p:last-child { margin-bottom: 0; }
+
+.decision { padding: 0 56px 120px; }
+.decision-prompt { font-family: var(--font-display); font-size: 13px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--greige); margin-bottom: 28px; }
+.decision-grid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--light-grey); }
+.decision-card { display: block; padding: 52px 40px 48px; border-right: 1px solid var(--light-grey); text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+.decision-card:last-child { border-right: none; }
+.decision-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--deep-teal); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.65,0,0.35,1); }
+.decision-card:hover::after { transform: scaleX(1); }
+.decision-number { display: block; font-family: var(--font-display); font-size: 12px; font-weight: 300; color: var(--greige); letter-spacing: 0.12em; margin-bottom: 28px; }
+.decision-title { font-family: var(--font-display); font-size: 26px; font-weight: 400; line-height: 1.2; color: var(--charcoal); margin-bottom: 8px; transition: color 0.3s; }
+.decision-card:hover .decision-title { color: var(--deep-teal); }
+.decision-subtitle { font-family: var(--font-display); font-size: 15px; font-style: italic; font-weight: 300; color: var(--mist-teal); margin-bottom: 18px; line-height: 1.4; }
+.decision-body { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); margin-bottom: 36px; }
+.decision-cta { display: block; font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brass); opacity: 0; transform: translateX(-6px); transition: opacity 0.3s, transform 0.3s; }
+.decision-card:hover .decision-cta { opacity: 1; transform: translateX(0); }
+
+section { padding: 120px 56px; }
+.section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 56px; display: flex; align-items: center; gap: 18px; }
+.section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+
+.framing { background: var(--deep-slate); color: var(--warm-white); }
+.framing .section-label { color: var(--mist-teal); }
+.framing .section-label::before { background: var(--mist-teal); }
+.framing-intro { max-width: 620px; margin-bottom: 72px; }
+.framing-intro p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.4; color: var(--warm-white); margin-bottom: 12px; }
+.framing-pillars { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid rgba(246,244,241,0.1); padding-top: 52px; }
+.framing-pillar { padding-right: 44px; border-right: 1px solid rgba(246,244,241,0.1); margin-right: 44px; }
+.framing-pillar:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.framing-pillar-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 16px; }
+.framing-pillar-text { font-size: 14px; font-weight: 300; line-height: 1.8; color: rgba(246,244,241,0.6); }
+
+.local { background: var(--warm-white); }
+.local-inner { display: grid; grid-template-columns: 320px 1fr; gap: 100px; align-items: start; }
+.local-left { position: sticky; top: 120px; }
+.local-headline { font-family: var(--font-display); font-size: clamp(36px, 3.5vw, 52px); font-weight: 300; line-height: 1.1; color: var(--charcoal); }
+.local-rule { width: 40px; height: 1px; background: var(--brass); margin: 32px 0; }
+.local-right p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 28px; }
+.local-right p:last-child { margin-bottom: 0; }
+
+.collective { background: var(--deep-teal); color: var(--warm-white); }
+.collective .section-label { color: rgba(246,244,241,0.45); }
+.collective .section-label::before { background: rgba(246,244,241,0.3); }
+.collective-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.collective-headline { font-family: var(--font-display); font-size: clamp(34px, 3.5vw, 50px); font-weight: 300; line-height: 1.15; color: var(--warm-white); }
+.collective-body p { font-size: 16px; font-weight: 300; line-height: 1.85; color: rgba(246,244,241,0.72); margin-bottom: 20px; }
+.collective-body p:last-child { margin-bottom: 0; }
+.collective-tag { display: inline-block; margin-top: 32px; padding: 9px 18px; border: 1px solid rgba(246,244,241,0.25); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(246,244,241,0.5); }
+
+.closing { background: var(--warm-white); text-align: center; padding: 160px 56px; }
+.closing h2 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 76px); font-weight: 300; font-style: italic; line-height: 1.1; color: var(--charcoal); margin-bottom: 56px; max-width: 780px; margin-left: auto; margin-right: auto; }
+.closing-ctas { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.btn-primary-dark { display: inline-block; padding: 17px 40px; background: var(--deep-teal); color: var(--warm-white); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+.btn-primary-dark:hover { background: var(--soft-teal); transform: translateY(-1px); }
+.btn-secondary { display: inline-block; padding: 16px 40px; border: 1px solid var(--deep-slate); color: var(--deep-slate); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.3s, color 0.3s, transform 0.2s; }
+.btn-secondary:hover { border-color: var(--deep-teal); color: var(--deep-teal); transform: translateY(-1px); }
+.section-divider { height: 1px; background: var(--light-grey); margin: 0 56px; }
+
+footer { background: var(--charcoal); padding: 44px 56px 36px; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.footer-logo svg { width: 18px; }
+.footer-name { font-family: var(--font-display); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(246,244,241,0.45); }
+.footer-links { display: flex; gap: 32px; list-style: none; }
+.footer-links a { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(246,244,241,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(246,244,241,0.75); }
+.footer-copy { font-size: 11px; color: rgba(246,244,241,0.25); }
+.footer-compliance { border-top: 1px solid rgba(246,244,241,0.08); padding-top: 20px; }
+.footer-compliance p { font-size: 11px; line-height: 1.7; color: rgba(246,244,241,0.22); max-width: 760px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+@media (max-width: 960px) {
+  nav { padding: 22px 28px; }
+  .nav-links { gap: 24px; }
+  .nav-hide { display: none; }
+  .hero, .diagnostic, .decision { padding-left: 28px; padding-right: 28px; }
+  .hero { padding-bottom: 64px; }
+  .hero-bg-mark { display: none; }
+  .diagnostic { padding-top: 60px; }
+  .decision { padding-bottom: 80px; }
+  .decision-grid { grid-template-columns: 1fr; }
+  .decision-card { border-right: none; border-bottom: 1px solid var(--light-grey); }
+  .decision-card:last-child { border-bottom: none; }
+  section { padding: 80px 28px; }
+  .framing-pillars { grid-template-columns: 1fr; }
+  .framing-pillar { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid rgba(246,244,241,0.1); padding-bottom: 28px; margin-bottom: 28px; }
+  .framing-pillar:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .local-inner { grid-template-columns: 1fr; gap: 36px; }
+  .local-left { position: static; }
+  .collective-inner { grid-template-columns: 1fr; gap: 40px; }
+  .closing { padding: 100px 28px; }
+  .closing-ctas { flex-direction: column; gap: 16px; }
+  footer { padding: 36px 28px 28px; }
+  .footer-main { flex-direction: column; gap: 24px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+  .section-divider { margin: 0 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="index.html" class="active">Start here</a></li>
+    <li class="nav-hide"><a href="guidance-individual.html">Guidance</a></li>
+    <li class="nav-hide"><a href="mediation-individual.html">Mediation</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <svg class="hero-bg-mark" viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+  <div class="hero-content">
+    <h1>The systems are complex.<br>The stakes are real.</h1>
+    <p class="hero-sub">We help people navigate the legal and institutional landscapes that shape some of the most consequential decisions they face.</p>
+    <p class="hero-prompt"><span class="hero-prompt-line"></span>Tell us what's brought you here ↓</p>
+  </div>
+</header>
+
+<div class="diagnostic reveal">
+  <p>Most difficulties in complex systems are not purely legal problems. They involve overlapping institutions, competing obligations, constrained resources and — frequently — people under considerable pressure.</p>
+  <p>Before a path forward becomes clear, the terrain needs to be understood. That is where we begin.</p>
+</div>
+
+<div class="decision">
+  <p class="decision-prompt reveal">Where are you right now?</p>
+  <div class="decision-grid">
+    <a href="dispute-individual.html" class="decision-card reveal">
+      <span class="decision-number">01</span>
+      <h2 class="decision-title">Facing a dispute</h2>
+      <p class="decision-subtitle">Something has become a dispute, or is heading that way.</p>
+      <p class="decision-body">You are facing a conflict — with a public body, a family member, a service provider, or another professional. You may be considering proceedings, or already in them.</p>
+      <span class="decision-cta">Begin here →</span>
+    </a>
+    <a href="guidance-individual.html" class="decision-card reveal reveal-delay-1">
+      <span class="decision-number">02</span>
+      <h2 class="decision-title">Need guidance</h2>
+      <p class="decision-subtitle">I need guidance — to understand my situation, my options, or what I'm facing.</p>
+      <p class="decision-body">You are navigating a complex system and need to understand how it works, what the rules actually require, and what your realistic options are — before things go further.</p>
+      <span class="decision-cta">Begin here →</span>
+    </a>
+    <a href="mediation-individual.html" class="decision-card reveal reveal-delay-2">
+      <span class="decision-number">03</span>
+      <h2 class="decision-title">Looking for mediation</h2>
+      <p class="decision-subtitle">I am looking for mediation.</p>
+      <p class="decision-body">You are seeking a structured process to resolve a dispute without litigation, or have been directed toward mediation before proceedings can continue.</p>
+      <span class="decision-cta">Begin here →</span>
+    </a>
+  </div>
+</div>
+
+<section class="framing">
+  <p class="section-label reveal">The approach</p>
+  <div class="framing-intro reveal">
+    <p>We do not begin with a preferred route. We begin with your situation.</p>
+    <p>We work in three modes — and move between them.</p>
+  </div>
+  <div class="framing-pillars reveal">
+    <div class="framing-pillar">
+      <p class="framing-pillar-label">Advisory</p>
+      <p class="framing-pillar-text">Understanding a system before a dispute forms, or while one is live. We help clients map the legal and institutional landscape: what the rules require, how they are applied in practice, and where the margins lie.<br><br>What happens at this stage often determines everything that follows.</p>
+    </div>
+    <div class="framing-pillar">
+      <p class="framing-pillar-label">Mediation</p>
+      <p class="framing-pillar-text">Our mediators bring deep knowledge of the regulatory and legal frameworks that govern these systems — the Mental Capacity Act, health and social care commissioning, public law.<br><br>That grounding keeps mediated discussions tethered to what is achievable. It prevents discussions drifting into the theoretical. And it produces durable outcomes.</p>
+    </div>
+    <div class="framing-pillar">
+      <p class="framing-pillar-label">Litigation</p>
+      <p class="framing-pillar-text">When other approaches are exhausted — or when formal challenge is simply the right course — we pursue it without hesitation.<br><br>We have extensive experience in Court of Protection proceedings, public law and regulatory challenge. We do not litigate as a default. When we do, we do it deliberately and well.</p>
+    </div>
+  </div>
+</section>
+
+<section class="local">
+  <p class="section-label reveal">Local knowledge</p>
+  <div class="local-inner">
+    <div class="local-left reveal">
+      <h2 class="local-headline">The gap between rules and how they are applied</h2>
+      <div class="local-rule"></div>
+    </div>
+    <div class="local-right reveal reveal-delay-1">
+      <p>The gap between what the rules say and how they are applied is where most of the difficulty in these systems lives.</p>
+      <p>We understand the institutions involved — how decisions are made within them, where discretion sits, and where challenge is realistic.</p>
+      <p>This is not generic legal knowledge. It is the kind of local, operational understanding that only comes from sustained practice in a specific field.</p>
+      <p>It is what allows us to advise with accuracy, mediate without losing grip on what is legally possible, and litigate with precision.</p>
+      <p>It is also what allows us to explain those realities clearly — so clients can make informed decisions about what is worth pursuing, and what is not.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="collective">
+  <p class="section-label reveal">The collective</p>
+  <div class="collective-inner">
+    <div class="reveal">
+      <h2 class="collective-headline">Dawson House is a collective of lawyers, mediators and policy practitioners.</h2>
+    </div>
+    <div class="collective-body reveal reveal-delay-1">
+      <p>We are a social enterprise, structured deliberately: to serve the people navigating these systems, and to give the specialists who practice within them the conditions in which careful, rigorous work is possible.</p>
+      <p>The quality of the work depends on how it is done — and that is not incidental to the model.</p>
+      <span class="collective-tag">Social enterprise</span>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <h2 class="reveal">Bring us the problem.<br>We will help you find the way through it.</h2>
+  <div class="closing-ctas reveal reveal-delay-1">
+    <a href="contact.html" class="btn-primary-dark">Get in touch →</a>
+    <a href="index.html" class="btn-secondary">Start with your situation →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="guidance-individual.html">Guidance</a></li>
+      <li><a href="mediation-individual.html">Mediation</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors. Our work encompasses advisory, mediation and consultancy services. Where matters require regulated legal representation, we will say so and can assist in identifying appropriate referrals.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
