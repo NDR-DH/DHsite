@@ -21,7 +21,7 @@
     border-right: 1px solid var(--light-grey);
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 56px;
   }
 
   .contact-left h1 {
@@ -30,7 +30,7 @@
     font-weight: 300;
     line-height: 1.05;
     color: var(--charcoal);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .contact-left-opening p {
@@ -42,7 +42,7 @@
   }
 
   .contact-expect {
-    padding-top: 48px;
+    padding-top: 44px;
     border-top: 1px solid var(--light-grey);
   }
 
@@ -51,7 +51,7 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--mist-teal);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
     gap: 14px;
@@ -69,7 +69,7 @@
   .contact-expect-item {
     display: flex;
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     align-items: baseline;
   }
 
@@ -80,7 +80,7 @@
     font-size: 13px;
     color: var(--greige);
     flex-shrink: 0;
-    width: 20px;
+    width: 18px;
   }
 
   .contact-expect-text {
@@ -90,8 +90,28 @@
     color: var(--soft-slate);
   }
 
+  .contact-direct {
+    padding-top: 44px;
+    border-top: 1px solid var(--light-grey);
+  }
+
+  .contact-direct p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--soft-slate);
+  }
+
+  .contact-direct a {
+    color: var(--deep-teal);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .contact-direct a:hover { opacity: 0.7; }
+
   .contact-reassurance {
-    padding-top: 48px;
+    padding-top: 44px;
     border-top: 1px solid var(--light-grey);
   }
 
@@ -102,11 +122,11 @@
     font-style: italic;
     line-height: 1.5;
     color: var(--deep-slate);
-    opacity: 0.7;
+    opacity: 0.65;
     max-width: 360px;
   }
 
-  /* FORM SIDE */
+  /* FORM */
   .contact-right {
     padding: 96px 56px 96px 72px;
   }
@@ -123,27 +143,25 @@
   }
 
   .form-label-optional {
-    opacity: 0.35;
+    opacity: 0.5;
     font-size: 10px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: none;
     margin-left: 8px;
     font-style: italic;
+    font-weight: 300;
   }
 
-  .form-field {
-    margin-bottom: 36px;
-  }
+  .form-field { margin-bottom: 32px; }
 
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   input[type="text"],
   input[type="email"],
-  input[type="file"],
   select,
   textarea {
     width: 100%;
@@ -178,10 +196,7 @@
     background-repeat: no-repeat;
     background-position: right 4px center;
     padding-right: 28px;
-    color: var(--deep-slate);
   }
-
-  select option[value=""] { color: rgba(47,50,53,0.38); }
 
   textarea {
     resize: none;
@@ -190,32 +205,25 @@
     padding-top: 14px;
   }
 
-  input[type="file"] {
-    font-size: 13px;
-    color: var(--soft-slate);
-    opacity: 0.6;
-    cursor: pointer;
-    padding-bottom: 10px;
+  .form-divider {
+    height: 1px;
+    background: var(--light-grey);
+    margin: 4px 0 32px;
   }
 
-  input[type="file"]::-webkit-file-upload-button {
-    display: none;
-  }
-
-  .file-note {
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--soft-slate);
-    opacity: 0.5;
-    margin-top: 6px;
-    display: block;
+  .form-section-heading {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--greige);
+    margin-bottom: 28px;
   }
 
   .form-submit-row {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-top: 8px;
+    margin-top: 12px;
     flex-wrap: wrap;
   }
 
@@ -248,24 +256,10 @@
     line-height: 1.6;
   }
 
-  .form-section-divider {
-    height: 1px;
-    background: var(--light-grey);
-    margin: 8px 0 36px;
-  }
-
-  .form-section-heading {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--greige);
-    margin-bottom: 28px;
-  }
-
   @media (max-width: 960px) {
     .contact-page { grid-template-columns: 1fr; margin-top: 76px; }
-    .contact-left { padding: 60px 28px 52px; border-right: none; border-bottom: 1px solid var(--light-grey); gap: 44px; }
-    .contact-right { padding: 52px 28px 80px; }
+    .contact-left { padding: 60px 28px 48px; border-right: none; border-bottom: 1px solid var(--light-grey); gap: 40px; }
+    .contact-right { padding: 48px 28px 80px; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
   }
 </style>
@@ -310,6 +304,10 @@
       </div>
     </div>
 
+    <div class="contact-direct">
+      <p>If email is easier, you can also contact us directly at <a href="mailto:hello@dawsonhouse.org.uk">hello@dawsonhouse.org.uk</a>.</p>
+    </div>
+
     <div class="contact-reassurance">
       <p>We will be direct about whether we can help, and if we are not the right people, we will say so.</p>
     </div>
@@ -317,7 +315,17 @@
   </div>
 
   <div class="contact-right">
-    <form id="contact-form" novalidate>
+
+    <!-- Replace REPLACE_WITH_REAL_ID with your Formspree form ID -->
+    <!-- Thank-you redirect: add _next hidden input below with URL of thank-you page when ready -->
+    <form
+      method="POST"
+      action="https://formspree.io/f/REPLACE_WITH_REAL_ID"
+      accept-charset="UTF-8"
+    >
+      <input type="hidden" name="_subject" value="New Dawson House enquiry">
+      <!-- Uncomment and set URL to redirect after submission: -->
+      <!-- <input type="hidden" name="_next" value="https://dawsonhouse.org.uk/thankyou.html"> -->
 
       <div class="form-row">
         <div class="form-field">
@@ -333,12 +341,10 @@
       <div class="form-field">
         <label class="form-label" for="role">Who are you in this situation?</label>
         <select id="role" name="role" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="individual">Individual</option>
-          <option value="family">Family member</option>
-          <option value="carer">Carer</option>
-          <option value="deputy">Professional deputy</option>
-          <option value="other">Other</option>
+          <option value="" disabled selected></option>
+          <option value="Individual / family member / carer">Individual / family member / carer</option>
+          <option value="Professional deputy">Professional deputy</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
@@ -347,41 +353,41 @@
         <textarea id="situation" name="situation" placeholder="A short outline of the situation is enough — what has happened, who is involved, and what concerns you." required></textarea>
       </div>
 
-      <div class="form-section-divider"></div>
+      <div class="form-divider"></div>
       <p class="form-section-heading">A few optional details</p>
 
       <div class="form-row">
         <div class="form-field">
-          <label class="form-label" for="stage">Stage of situation <span class="form-label-optional">optional</span></label>
+          <label class="form-label" for="stage">
+            Stage of situation
+            <span class="form-label-optional">optional</span>
+          </label>
           <select id="stage" name="stage">
-            <option value="" disabled selected>Select one</option>
-            <option value="understanding">Trying to understand what is happening</option>
-            <option value="early">Early dispute</option>
-            <option value="ongoing">Ongoing dispute</option>
-            <option value="mediation">Considering mediation</option>
-            <option value="unsure">Not sure</option>
+            <option value="" disabled selected></option>
+            <option value="Trying to understand what is happening">Trying to understand what is happening</option>
+            <option value="Early dispute">Early dispute</option>
+            <option value="Ongoing dispute">Ongoing dispute</option>
+            <option value="Considering mediation">Considering mediation</option>
+            <option value="Not sure">Not sure</option>
           </select>
         </div>
         <div class="form-field">
-          <label class="form-label" for="urgency">Urgency <span class="form-label-optional">optional</span></label>
+          <label class="form-label" for="urgency">
+            Urgency
+            <span class="form-label-optional">optional</span>
+          </label>
           <select id="urgency" name="urgency">
-            <option value="" disabled selected>Select one</option>
-            <option value="none">No immediate urgency</option>
-            <option value="some">Some time sensitivity</option>
-            <option value="urgent">Urgent</option>
+            <option value="" disabled selected></option>
+            <option value="No immediate urgency">No immediate urgency</option>
+            <option value="Some time sensitivity">Some time sensitivity</option>
+            <option value="Urgent">Urgent</option>
           </select>
         </div>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="documents">Documents <span class="form-label-optional">optional</span></label>
-        <input type="file" id="documents" name="documents" multiple accept=".pdf,.doc,.docx,.png,.jpg">
-        <span class="file-note">Upload relevant documents if helpful. PDF, Word or image files accepted. This feature is not yet active — please email documents to hello@dawsonhouse.org.uk for now.</span>
       </div>
 
       <div class="form-submit-row">
         <button type="submit" class="form-submit">Send enquiry</button>
-        <p class="form-privacy">Treated in confidence. No commitment on either side.</p>
+        <p class="form-privacy">Treated in confidence. Sending an enquiry does not create a legal relationship.</p>
       </div>
 
     </form>
@@ -411,14 +417,6 @@
 <script>
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
-
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const required = [...this.querySelectorAll('[required]')];
-    const missing = required.find(el => !el.value.trim());
-    if (missing) { missing.focus(); return; }
-    this.innerHTML = '<div style="padding: 48px 0;"><p style="font-family: \'Cormorant Garamond\', Georgia, serif; font-size: 32px; font-weight: 300; font-style: italic; color: var(--charcoal); margin-bottom: 16px;">Thank you.</p><p style="font-size: 15px; font-weight: 300; color: var(--soft-slate); line-height: 1.8;">We have received your enquiry and will be in touch shortly.</p></div>';
-  });
 </script>
 </body>
 </html>
