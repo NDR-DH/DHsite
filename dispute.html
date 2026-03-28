@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resolving disputes in public law and care decisions | Dawson House</title>
+<meta name="description" content="Structured dispute work for situations where a decision or position needs to be addressed directly.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dawsonhouse.org.uk/dispute.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .route-wrap { padding: 160px 56px 120px; }
+  .route-intro { max-width: 600px; margin-bottom: 48px; }
+  .route-intro p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-intro p:last-child { margin-bottom: 0; }
+
+  .route-checklist { max-width: 600px; margin-bottom: 64px; }
+  .route-checklist-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-checklist-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-checklist ul { list-style: none; padding: 0; margin: 0; }
+  .route-checklist ul li { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--soft-slate); padding: 14px 0; border-bottom: 1px solid var(--light-grey); padding-left: 20px; position: relative; }
+  .route-checklist ul li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--font-display); }
+  .route-checklist ul li:first-child { border-top: 1px solid var(--light-grey); }
+
+  .route-body-section { max-width: 680px; margin-bottom: 72px; }
+  .route-body-section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-body-section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-body-section p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-body-section p:last-child { margin-bottom: 0; }
+
+  .route-examples { max-width: 680px; margin-bottom: 72px; }
+  .route-examples-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-examples-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-example { padding: 28px 0; border-bottom: 1px solid var(--light-grey); }
+  .route-example:first-of-type { border-top: 1px solid var(--light-grey); }
+  .route-example-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 10px; line-height: 1.2; }
+  .route-example-desc { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-structure { max-width: 680px; margin-bottom: 88px; }
+  .route-structure-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-structure-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-structure-items { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--light-grey); }
+  .route-structure-item { padding: 32px 28px; border-right: 1px solid var(--light-grey); }
+  .route-structure-item:last-child { border-right: none; }
+  .route-structure-item-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+  .route-structure-item-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-cta-block { background: var(--deep-slate); padding: 64px 56px; max-width: none; margin: 0 -56px 0; }
+  .route-cta-inner { max-width: 580px; }
+  .route-cta-block p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.4; color: var(--warm-white); margin-bottom: 36px; }
+  .btn-primary-dark { display: inline-block; padding: 17px 40px; background: var(--deep-teal); color: var(--warm-white); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+  .btn-primary-dark:hover { background: var(--soft-teal); transform: translateY(-1px); }
+
+  @media (max-width: 960px) {
+    .route-wrap { padding: 120px 28px 80px; }
+    .route-structure-items { grid-template-columns: 1fr; }
+    .route-structure-item { border-right: none; border-bottom: 1px solid var(--light-grey); }
+    .route-structure-item:last-child { border-bottom: none; }
+    .route-cta-block { padding: 56px 28px; margin: 0 -28px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="about.html">About</a></li>
+    <li class="nav-hide"><a href="mediation.html">Mediation</a></li>
+    <li class="nav-hide"><a href="index.html">Start here</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="route-wrap">
+  <div class="breadcrumb" style="margin-bottom: 48px;">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">—</span>
+    <span>Resolve a dispute</span>
+  </div>
+
+  <h1 style="font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; color: #1F1F1F; margin-bottom: 40px; max-width: 700px;">Resolve a dispute</h1>
+
+  <div class="route-intro">
+    <p>Sometimes a situation does not resolve through explanation or discussion and requires a more direct response. A decision may have been made and maintained, or a public body may not be acting in accordance with its obligations.</p>
+    <p>This route is for situations where there is already a clear issue and the focus shifts from understanding the position to addressing it.</p>
+  </div>
+
+  <div class="route-checklist">
+    <p class="route-checklist-label">This kind of work may be appropriate if:</p>
+    <ul>
+      <li>a decision has been made and maintained despite concerns</li>
+      <li>attempts to resolve the situation have not led to change</li>
+      <li>there is a clear issue with how a framework has been applied</li>
+      <li>a public body or decision-maker is not acting as required</li>
+      <li>the situation requires structured challenge or escalation</li>
+    </ul>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this usually involves</p>
+    <p>Dispute work focuses on engaging directly with the decision or position that has been taken.</p>
+    <p>This involves identifying the precise decision, act, or omission in issue, analysing the legal and factual framework that applies, and setting out clearly where the position cannot be sustained.</p>
+    <p>The work is structured so that, if necessary, it can support formal challenge. This means the reasoning, evidence, and chronology are developed in a way that can be relied on beyond initial correspondence.</p>
+    <p>The aim is to bring the situation back within a lawful and properly reasoned framework, whether through reconsideration or, where necessary, escalation.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">How this approach works</p>
+    <p>The approach is structured and deliberate. Not every situation requires escalation, but where it does, it is important that it is undertaken properly and at the right point.</p>
+    <p>Work typically begins with clear and focused correspondence, setting out the position and identifying what is required to resolve the issue.</p>
+    <p>If the situation does not resolve, the approach can move forward in a controlled way. This may include further structured representations, engagement with decision-makers, or preparation for formal proceedings where necessary.</p>
+    <p>The emphasis is on taking steps that are proportionate, effective, and capable of progressing the situation, rather than escalating for its own sake.</p>
+  </div>
+
+  <div class="route-examples">
+    <p class="route-examples-label">Examples of disputes we handle</p>
+    <div class="route-example">
+      <h3 class="route-example-title">Refusal or reduction of care or funding despite clear need</h3>
+      <p class="route-example-desc">A local authority or NHS body has refused or reduced care or funding, and the decision has been maintained despite representations. The issue is not simply whether the decision was made, but whether it can be sustained given the person's needs and the applicable framework.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">Failure to carry out lawful assessment or decision-making</h3>
+      <p class="route-example-desc">A public body has failed to carry out the assessments or processes that the law requires, or has conducted them in a way that does not meet the required standard. The dispute is not about the outcome alone, but about whether the correct process was followed.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">Ongoing disagreement between parties that is not resolving</h3>
+      <p class="route-example-desc">A dispute between individuals, families, professionals, or organisations has continued without resolution. The situation requires structured engagement to identify the core issues, establish the legal position of each party, and determine the appropriate way forward.</p>
+    </div>
+  </div>
+
+  <div class="route-structure">
+    <p class="route-structure-label">How this work is usually structured</p>
+    <div class="route-structure-items">
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Defined issue</p>
+        <p class="route-structure-item-text">The dispute is focused on a specific decision or position. The scope of the work is identified clearly at the outset.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Agreed fee</p>
+        <p class="route-structure-item-text">Fees are agreed in advance for defined stages of work, so you can assess proportionality before proceeding at each step.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Escalation where needed</p>
+        <p class="route-structure-item-text">The approach can develop if the situation requires it. Where further steps are needed, that will be discussed and agreed before they are taken.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this can lead to</p>
+    <p>This work may lead to a decision being reconsidered, a position being changed, or a matter being resolved through structured engagement.</p>
+    <p>Where formal proceedings are required, we will say so and assist in progressing the matter to the appropriate next stage.</p>
+  </div>
+
+  <div class="route-cta-block">
+    <div class="route-cta-inner">
+      <p>If a situation has reached the point where it needs to be addressed directly, you can get in touch.</p>
+      <a href="contact.html" class="btn-primary-dark">Discuss a dispute →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="mediation.html">Mediation</a></li>
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities. It operates as a structured intake, triage, and routing system for matters involving health and social care, mental capacity, public law, and related disputes. Where work is taken on, it is undertaken through the appropriate entity. Where regulated representation is required, we will say so.</p>
+  </div>
+  <p class="footer-disclosure" style="font-size:11px;line-height:1.7;color:rgba(246,244,241,0.22);max-width:760px;margin-top:12px;">Dawson House is a trading name of Dawson Reith &amp; Co Ltd. The company does not undertake reserved legal activities. Where legal proceedings are required, work is carried out through appropriately regulated providers.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding your situation — for organisations | Dawson House</title>
+<meta name="description" content="Structured review of decisions and situations within public and regulated systems.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dawsonhouse.org.uk/review-organisation.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .route-wrap { padding: 160px 56px 120px; }
+  .route-intro { max-width: 600px; margin-bottom: 48px; }
+  .route-intro p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-intro p:last-child { margin-bottom: 0; }
+
+  .route-checklist { max-width: 600px; margin-bottom: 64px; }
+  .route-checklist-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-checklist-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-checklist ul { list-style: none; padding: 0; margin: 0; }
+  .route-checklist ul li { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--soft-slate); padding: 14px 0; border-bottom: 1px solid var(--light-grey); padding-left: 20px; position: relative; }
+  .route-checklist ul li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--font-display); }
+  .route-checklist ul li:first-child { border-top: 1px solid var(--light-grey); }
+
+  .route-body-section { max-width: 680px; margin-bottom: 72px; }
+  .route-body-section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-body-section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-body-section p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-body-section p:last-child { margin-bottom: 0; }
+
+  .route-examples { max-width: 680px; margin-bottom: 72px; }
+  .route-examples-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-examples-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-example { padding: 28px 0; border-bottom: 1px solid var(--light-grey); }
+  .route-example:first-of-type { border-top: 1px solid var(--light-grey); }
+  .route-example-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 10px; line-height: 1.2; }
+  .route-example-desc { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-structure { max-width: 680px; margin-bottom: 88px; }
+  .route-structure-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-structure-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-structure-items { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--light-grey); }
+  .route-structure-item { padding: 32px 28px; border-right: 1px solid var(--light-grey); }
+  .route-structure-item:last-child { border-right: none; }
+  .route-structure-item-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+  .route-structure-item-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-cta-block { background: var(--deep-slate); padding: 64px 56px; max-width: none; margin: 0 -56px 0; }
+  .route-cta-inner { max-width: 580px; }
+  .route-cta-block p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.4; color: var(--warm-white); margin-bottom: 36px; }
+  .btn-primary-dark { display: inline-block; padding: 17px 40px; background: var(--deep-teal); color: var(--warm-white); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+  .btn-primary-dark:hover { background: var(--soft-teal); transform: translateY(-1px); }
+
+  @media (max-width: 960px) {
+    .route-wrap { padding: 120px 28px 80px; }
+    .route-structure-items { grid-template-columns: 1fr; }
+    .route-structure-item { border-right: none; border-bottom: 1px solid var(--light-grey); }
+    .route-structure-item:last-child { border-bottom: none; }
+    .route-cta-block { padding: 56px 28px; margin: 0 -28px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="about.html">About</a></li>
+    <li class="nav-hide"><a href="mediation.html">Mediation</a></li>
+    <li class="nav-hide"><a href="index.html">Start here</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="route-wrap">
+  <div class="breadcrumb" style="margin-bottom: 48px;">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">—</span>
+    <a href="review.html">Review a situation or decision</a>
+    <span class="breadcrumb-sep">—</span>
+    <span>Review for professionals and organisations</span>
+  </div>
+
+  <h1 style="font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; color: #1F1F1F; margin-bottom: 40px; max-width: 700px;">Review for professionals and organisations</h1>
+
+  <div class="route-intro">
+    <p>You may be dealing with a situation involving care, capacity, funding, responsibility, or decision-making within a public or regulated system, where the position that has been reached is uncertain, contested, or difficult to maintain.</p>
+    <p>In these situations, the issue is often not the absence of a framework, but uncertainty about whether it has been applied correctly, whether the current position is sustainable, and what should happen next.</p>
+    <p>This is for structured review before deciding whether a situation should be maintained, reframed, resolved, or challenged.</p>
+  </div>
+
+  <div class="route-checklist">
+    <p class="route-checklist-label">This may be useful if:</p>
+    <ul>
+      <li>you need to understand whether a current position or decision is correct and defensible</li>
+      <li>you are dealing with issues around funding, responsibility, care arrangements, capacity, or decision-making</li>
+      <li>a situation has become difficult, contested, or operationally unclear</li>
+      <li>you need a structured view of the position before deciding how to proceed</li>
+      <li>you want clarity before moving into correspondence, resolution, or escalation</li>
+    </ul>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this usually involves</p>
+    <p>A structured review is a defined piece of work focused on understanding a specific situation properly before deciding what should happen next.</p>
+    <p>The aim is to identify the relevant framework, assess how the position has been reached, and establish whether the current approach is correct, sustainable, and properly reasoned.</p>
+    <p>This creates a clear basis for deciding whether the situation should be maintained, adjusted, resolved, or challenged.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What a review may involve</p>
+    <p>Work of this kind often sits at the point where legal rules, operational practice, and institutional decision-making meet. The difficulty is rarely the absence of a framework, but the interaction between them in a live situation.</p>
+    <p>The value of the review lies in turning that interaction into a structured picture: what has happened, what matters legally, what matters operationally, and where the key issues lie. This allows decisions to be made on a clearer and more defensible basis.</p>
+  </div>
+
+  <div class="route-examples">
+    <p class="route-examples-label">Examples of situations we review</p>
+    <div class="route-example">
+      <h3 class="route-example-title">A funding or responsibility position that needs review</h3>
+      <p class="route-example-desc">A public body, provider, or organisation has taken a position on responsibility, funding, or support, and a structured view is needed before deciding whether that position can properly be maintained.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">A capacity, best interests, or care decision under scrutiny</h3>
+      <p class="route-example-desc">There is uncertainty about whether the correct framework has been followed in relation to capacity, best interests, or care arrangements, and a clear view of the position is needed before further action is taken.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">A situation becoming contested or difficult to manage</h3>
+      <p class="route-example-desc">A matter involving multiple parties, competing responsibilities, or operational pressures is becoming difficult, and structured review is needed before moving into resolution or dispute.</p>
+    </div>
+  </div>
+
+  <div class="route-structure">
+    <p class="route-structure-label">How this work is usually structured</p>
+    <div class="route-structure-items">
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Defined scope</p>
+        <p class="route-structure-item-text">Focused on a specific issue or situation. The work is bounded at the outset so the objective and output are clear.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Agreed fee</p>
+        <p class="route-structure-item-text">Fees are agreed in advance for the defined piece of work, so you can assess proportionality before proceeding.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Targeted input</p>
+        <p class="route-structure-item-text">Only the information needed for the review is requested. There is no requirement to provide material at first contact.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this can lead to</p>
+    <p>A review may confirm that the current position is sound, or it may show that something in the handling of the situation needs to change.</p>
+    <p>More importantly, it provides a clear basis for deciding what should happen next. That may mean maintaining the position, adjusting it, raising issues in a more structured way, resolving the matter through discussion, or taking steps toward formal challenge.</p>
+    <p>The purpose is not to force escalation, but to support clearer and better-grounded decision-making.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What you receive from a structured review</p>
+    <p>A structured review is designed to give a clear and usable understanding of the position before further decisions are made.</p>
+    <p>You will usually receive:</p>
+    <p>— a structured explanation of the relevant legal and practical framework<br>
+    — analysis of how the current position has been reached and whether it is sustainable<br>
+    — identification of the key issues and pressure points<br>
+    — clear options, including whether the situation is better maintained, adjusted, resolved, or challenged<br>
+    — recommended next steps</p>
+    <p>This is a defined piece of work, not an open-ended arrangement. The aim is to provide clarity at the point where it is most needed.</p>
+  </div>
+
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">Position and regulatory context</p>
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities.</p>
+    <p>Structured review work of this kind is advisory and unreserved. It can therefore be carried out without the cost and structure of a traditional law firm at this stage.</p>
+    <p>Where a matter requires regulated representation — whether for pre-action work, proceedings, or advocacy — we will say so clearly and at the appropriate point.</p>
+    <p>This allows early-stage work to be carried out in a focused and proportionate way, while ensuring that matters move into the correct structure if and when that becomes necessary.</p>
+  </div>
+
+  <div class="route-cta-block">
+    <div class="route-cta-inner">
+      <p>If you need a clear and structured understanding of the position before deciding how to proceed, you can get in touch to arrange a defined review.</p>
+      <a href="contact.html" class="btn-primary-dark">Discuss the situation →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="mediation.html">Mediation</a></li>
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities. It operates as a structured intake, triage, and routing system for matters involving health and social care, mental capacity, public law, and related disputes. Where work is taken on, it is undertaken through the appropriate entity. Where regulated representation is required, we will say so.</p>
+  </div>
+  <p class="footer-disclosure" style="font-size:11px;line-height:1.7;color:rgba(246,244,241,0.22);max-width:760px;margin-top:12px;">Dawson House is a trading name of Dawson Reith &amp; Co Ltd. The company does not undertake reserved legal activities. Where legal proceedings are required, work is carried out through appropriately regulated providers.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+</script>
+</body>
+</html>

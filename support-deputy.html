@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support for deputies and attorneys | Dawson House</title>
+<meta name="description" content="Structured progression work for professional deputies and attorneys where support or services are not properly in place.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dawsonhouse.org.uk/support-deputy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .route-wrap { padding: 160px 56px 120px; }
+  .route-intro { max-width: 600px; margin-bottom: 48px; }
+  .route-intro p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-intro p:last-child { margin-bottom: 0; }
+
+  .route-checklist { max-width: 600px; margin-bottom: 64px; }
+  .route-checklist-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-checklist-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-checklist ul { list-style: none; padding: 0; margin: 0; }
+  .route-checklist ul li { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--soft-slate); padding: 14px 0; border-bottom: 1px solid var(--light-grey); padding-left: 20px; position: relative; }
+  .route-checklist ul li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--font-display); }
+  .route-checklist ul li:first-child { border-top: 1px solid var(--light-grey); }
+
+  .route-body-section { max-width: 680px; margin-bottom: 72px; }
+  .route-body-section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-body-section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-body-section p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-body-section p:last-child { margin-bottom: 0; }
+
+  .route-examples { max-width: 680px; margin-bottom: 72px; }
+  .route-examples-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-examples-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-example { padding: 28px 0; border-bottom: 1px solid var(--light-grey); }
+  .route-example:first-of-type { border-top: 1px solid var(--light-grey); }
+  .route-example-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 10px; line-height: 1.2; }
+  .route-example-desc { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-structure { max-width: 680px; margin-bottom: 88px; }
+  .route-structure-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-structure-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-structure-items { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--light-grey); }
+  .route-structure-item { padding: 32px 28px; border-right: 1px solid var(--light-grey); }
+  .route-structure-item:last-child { border-right: none; }
+  .route-structure-item-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+  .route-structure-item-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-cta-block { background: var(--deep-slate); padding: 64px 56px; max-width: none; margin: 0 -56px 0; }
+  .route-cta-inner { max-width: 580px; }
+  .route-cta-block p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.4; color: var(--warm-white); margin-bottom: 36px; }
+  .btn-primary-dark { display: inline-block; padding: 17px 40px; background: var(--deep-teal); color: var(--warm-white); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+  .btn-primary-dark:hover { background: var(--soft-teal); transform: translateY(-1px); }
+
+  @media (max-width: 960px) {
+    .route-wrap { padding: 120px 28px 80px; }
+    .route-structure-items { grid-template-columns: 1fr; }
+    .route-structure-item { border-right: none; border-bottom: 1px solid var(--light-grey); }
+    .route-structure-item:last-child { border-bottom: none; }
+    .route-cta-block { padding: 56px 28px; margin: 0 -28px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="about.html">About</a></li>
+    <li class="nav-hide"><a href="mediation.html">Mediation</a></li>
+    <li class="nav-hide"><a href="index.html">Start here</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="route-wrap">
+  <div class="breadcrumb" style="margin-bottom: 48px;">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">—</span>
+    <a href="support.html">Get support or services in place</a>
+    <span class="breadcrumb-sep">—</span>
+    <span>Support for deputies and attorneys</span>
+  </div>
+
+  <h1 style="font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; color: #1F1F1F; margin-bottom: 40px; max-width: 700px;">Support for deputies and attorneys</h1>
+
+  <div class="route-intro">
+    <p>As a deputy or attorney, you may be dealing with a situation where the issue is not yet mainly a dispute, but the fact that the right care, support, service, or process is not actually in place.</p>
+    <p>The difficulty may lie in delay, drift, unclear ownership, poor implementation, or a gap between what has been agreed and what is happening in practice.</p>
+    <p>This is structured support work where the aim is to move the situation forward in a way that is clear, proportionate, and defensible.</p>
+  </div>
+
+  <div class="route-checklist">
+    <p class="route-checklist-label">This may be the right place to start if:</p>
+    <ul>
+      <li>support has been agreed in principle, but is not being implemented properly</li>
+      <li>an assessment, package, or care arrangement is drifting or not moving forward</li>
+      <li>more than one public body, provider, or professional is involved, but no one is taking clear ownership</li>
+      <li>you need the situation to move forward before deciding whether formal challenge is necessary</li>
+      <li>you need a defined piece of work that helps establish what should happen next and how to get there</li>
+    </ul>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this usually involves</p>
+    <p>Support work for deputies is usually a defined piece of progression work directed to a specific blockage, implementation issue, or developing situation.</p>
+    <p>The task is not to challenge for the sake of it, but to establish what should be happening, why it is not happening, and what needs to happen next in order to move the situation forward properly.</p>
+    <p>That may involve clarifying responsibilities, identifying the relevant framework, structuring next steps, and engaging with the right people or bodies so that the position becomes workable in practice.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this work may involve</p>
+    <p>Deputy-facing support work often sits at the point where legal framework, care planning, funding arrangements, and institutional practice meet. The difficulty is often not whether support should exist, but how to secure implementation, coordination, and practical movement.</p>
+    <p>The value of this work lies in turning a drifting or blocked situation into a structured one: who is responsible, what needs to happen, what is getting in the way, and what sequence of action is most likely to produce a workable outcome.</p>
+    <p>This allows the deputy to move from uncertainty or drift to a position that is reasoned, proportionate, and capable of withstanding later scrutiny if necessary.</p>
+    <p>This kind of structured progression work is often not provided within traditional models, where the focus tends to sit either on general advice or formal challenge, rather than the space in between.</p>
+  </div>
+
+  <div class="route-examples">
+    <p class="route-examples-label">Examples of situations we help progress</p>
+    <div class="route-example">
+      <h3 class="route-example-title">Support agreed, but not functioning in practice</h3>
+      <p class="route-example-desc">A package, care arrangement, or service has been agreed, but it is not operating properly, is not being delivered consistently, or is not meeting the needs it was supposed to address.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">Assessment or planning work has stalled</h3>
+      <p class="route-example-desc">An assessment, support plan, discharge arrangement, or related process has started but is drifting, incomplete, or not leading to a workable outcome.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">Multiple bodies involved, but no clear ownership</h3>
+      <p class="route-example-desc">Responsibility is spread across a local authority, NHS body, provider, deputy, or other professionals, but it is unclear who is meant to do what and how the situation is actually meant to move forward.</p>
+    </div>
+  </div>
+
+  <div class="route-structure">
+    <p class="route-structure-label">How this work is usually structured</p>
+    <div class="route-structure-items">
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Defined task</p>
+        <p class="route-structure-item-text">This work is scoped around a particular implementation issue, blockage, or support problem. The objective is to produce movement, not to create an open-ended advisory retainer.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Agreed fee</p>
+        <p class="route-structure-item-text">Fees are agreed in advance for the defined piece of work, so proportionality and recoverability can be assessed before proceeding.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Targeted material only</p>
+        <p class="route-structure-item-text">We do not ask for documents at first contact. If support work is appropriate, we identify the specific material needed for that task.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this can lead to</p>
+    <p>This work may result in clearer ownership, a more workable process, better implementation of support, or practical movement where the situation has stalled.</p>
+    <p>It may also show that the problem is no longer mainly one of implementation or coordination, and that the matter should move into review, structured resolution, or dispute.</p>
+    <p>The purpose is not to escalate automatically. It is to make sure the situation is properly structured before deciding whether escalation is necessary.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What you receive from structured support work</p>
+    <p>Structured support work is designed to give you a clear and usable way of progressing the situation before deciding whether stronger intervention is needed.</p>
+    <p>You will usually receive:</p>
+    <p>— a structured view of what should be happening under the relevant framework<br>
+    — identification of the practical, legal, and operational blockers in the situation<br>
+    — clarification of responsibility, sequence, and next steps<br>
+    — a reasoned recommendation about how the matter should be progressed<br>
+    — where appropriate, a framework for correspondence, engagement, or further action</p>
+    <p>This is not open-ended advisory work. It is a defined piece of progression work designed to support proportionate and defensible deputy decision-making.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">Working with deputies</p>
+    <p>This work is designed to sit properly within deputyship practice.</p>
+    <p>We are used to working with professional deputies and attorneys and to the constraints that apply, including proportionality, recoverability, and scrutiny of decision-making.</p>
+    <p>— work is scoped clearly in advance so you can assess proportionality and cost<br>
+    — fees are agreed at the outset for the defined piece of work<br>
+    — input is focused on what is necessary for that task, not broad document trawls</p>
+    <p>The aim is to produce work that is practically useful, operationally realistic, and capable of withstanding scrutiny if decisions are later examined.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">Position and regulatory context</p>
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities.</p>
+    <p>Structured support work of this kind is advisory and unreserved. It can therefore be carried out without requiring you to incur the cost and structure of a traditional law firm at this stage.</p>
+    <p>Where a matter requires regulated representation — whether for pre-action work, proceedings, or advocacy — we will say so clearly and at the appropriate point.</p>
+    <p>This allows early-stage work to be carried out in a focused and proportionate way, while ensuring that matters move into the correct structure if and when that becomes necessary.</p>
+  </div>
+
+  <div class="route-cta-block">
+    <div class="route-cta-inner">
+      <p>If you need a structured way of moving a situation forward before deciding whether stronger action is needed, you can get in touch to discuss a defined piece of work.</p>
+      <a href="contact.html" class="btn-primary-dark">Discuss deputy support →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="mediation.html">Mediation</a></li>
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities. It operates as a structured intake, triage, and routing system for matters involving health and social care, mental capacity, public law, and related disputes. Where work is taken on, it is undertaken through the appropriate entity. Where regulated representation is required, we will say so.</p>
+  </div>
+  <p class="footer-disclosure" style="font-size:11px;line-height:1.7;color:rgba(246,244,241,0.22);max-width:760px;margin-top:12px;">Dawson House is a trading name of Dawson Reith &amp; Co Ltd. The company does not undertake reserved legal activities. Where legal proceedings are required, work is carried out through appropriately regulated providers.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+</script>
+</body>
+</html>
