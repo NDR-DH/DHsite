@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review for individuals and families — Dawson House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .route-wrap { padding: 160px 56px 120px; }
+  .route-intro { max-width: 600px; margin-bottom: 48px; }
+  .route-intro p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-intro p:last-child { margin-bottom: 0; }
+
+  .route-checklist { max-width: 600px; margin-bottom: 64px; }
+  .route-checklist-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-checklist-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-checklist ul { list-style: none; padding: 0; margin: 0; }
+  .route-checklist ul li { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--soft-slate); padding: 14px 0; border-bottom: 1px solid var(--light-grey); padding-left: 20px; position: relative; }
+  .route-checklist ul li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--font-display); }
+  .route-checklist ul li:first-child { border-top: 1px solid var(--light-grey); }
+
+  .route-body-section { max-width: 680px; margin-bottom: 72px; }
+  .route-body-section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-body-section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-body-section p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-body-section p:last-child { margin-bottom: 0; }
+
+  .route-examples { max-width: 680px; margin-bottom: 72px; }
+  .route-examples-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-examples-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-example { padding: 28px 0; border-bottom: 1px solid var(--light-grey); }
+  .route-example:first-of-type { border-top: 1px solid var(--light-grey); }
+  .route-example-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 10px; line-height: 1.2; }
+  .route-example-desc { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-structure { max-width: 680px; margin-bottom: 88px; }
+  .route-structure-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-structure-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-structure-items { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--light-grey); }
+  .route-structure-item { padding: 32px 28px; border-right: 1px solid var(--light-grey); }
+  .route-structure-item:last-child { border-right: none; }
+  .route-structure-item-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+  .route-structure-item-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-cta-block { background: var(--deep-slate); padding: 64px 56px; max-width: none; margin: 0 -56px 0; }
+  .route-cta-inner { max-width: 580px; }
+  .route-cta-block p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.4; color: var(--warm-white); margin-bottom: 36px; }
+  .btn-primary-dark { display: inline-block; padding: 17px 40px; background: var(--deep-teal); color: var(--warm-white); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+  .btn-primary-dark:hover { background: var(--soft-teal); transform: translateY(-1px); }
+
+  @media (max-width: 960px) {
+    .route-wrap { padding: 120px 28px 80px; }
+    .route-structure-items { grid-template-columns: 1fr; }
+    .route-structure-item { border-right: none; border-bottom: 1px solid var(--light-grey); }
+    .route-structure-item:last-child { border-bottom: none; }
+    .route-cta-block { padding: 56px 28px; margin: 0 -28px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="about.html">About</a></li>
+    <li class="nav-hide"><a href="index.html">Start here</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="route-wrap">
+  <div class="breadcrumb" style="margin-bottom: 48px;">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">—</span>
+    <a href="review.html">Review a situation or decision</a>
+    <span class="breadcrumb-sep">—</span>
+    <span>Review for individuals and families</span>
+  </div>
+
+  <h1 style="font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); margin-bottom: 40px; max-width: 700px;">Review for individuals and families</h1>
+
+  <div class="route-intro">
+    <p>If something has been decided about care, support, funding, or a person's circumstances, it is not always clear whether that decision is correct or what should happen next. The situation may feel confusing, pressured, or difficult to challenge.</p>
+    <p>This route is for understanding what has happened, what framework applies, and what your options are. It is designed for situations where you need clarity before deciding what to do.</p>
+  </div>
+
+  <div class="route-checklist">
+    <p class="route-checklist-label">This route may be the right place to start if:</p>
+    <ul>
+      <li>you have been told a decision has been made but you are not sure it is right</li>
+      <li>care, support, funding, or placement arrangements do not seem to make sense</li>
+      <li>you have concerns about capacity or best interests decisions</li>
+      <li>you feel something is wrong but do not yet know how to challenge it</li>
+      <li>you need a clear explanation of what your options are</li>
+    </ul>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this usually involves</p>
+    <p>A review is a structured piece of work that looks carefully at what has happened and what should have happened. The aim is to give you a clear and grounded understanding of the situation. This is a type of work we carry out regularly for individuals and families dealing with difficult or unclear situations.</p>
+    <p>This may involve identifying the relevant legal framework, explaining how decisions are meant to be made, and looking at whether the decision you have been given fits with that framework.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What a review may involve</p>
+    <p>The purpose of the review is not to overwhelm you with technical detail, but to make the situation understandable. That may include explaining how the system works, identifying where things may have gone wrong, and setting out realistic options for what could happen next.</p>
+    <p>The outcome may be a written explanation, advice on next steps, or a clear plan for how to approach the situation.</p>
+  </div>
+
+  <div class="route-examples">
+    <p class="route-examples-label">Examples of situations we review</p>
+    <div class="route-example">
+      <h3 class="route-example-title">A care or funding decision that does not make sense</h3>
+      <p class="route-example-desc">A local authority or NHS body has reduced, refused, or changed care or funding arrangements, and it is not clear what the decision is based on, whether the right assessment was carried out, or what can be done about it.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">A disagreement about capacity or best interests</h3>
+      <p class="route-example-desc">A decision has been made about whether someone has capacity, or about what is in their best interests, and there are concerns about whether it was handled correctly or whether the person's wishes were properly taken into account.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">A situation that feels wrong but is difficult to challenge</h3>
+      <p class="route-example-desc">Something has happened — involving care, placement, support, or a process — that does not seem right, but it is not clear what the rules require, whether there is a basis for challenge, or where to start.</p>
+    </div>
+  </div>
+
+  <div class="route-structure">
+    <p class="route-structure-label">How this work is usually structured</p>
+    <div class="route-structure-items">
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Clear scope</p>
+        <p class="route-structure-item-text">This work is focused on understanding a particular situation or decision. It is not an open-ended process.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Agreed fee</p>
+        <p class="route-structure-item-text">Fees are agreed in advance so you know where you stand before proceeding.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Only what is needed</p>
+        <p class="route-structure-item-text">We will only ask for information if it is needed for the review. There is nothing to prepare or upload at this stage.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this can lead to</p>
+    <p>A review may show that the decision is correct, or it may show that something may not have been handled correctly. It may help you resolve the situation through discussion, or it may lead to a more formal challenge.</p>
+    <p>The purpose is to help you move forward with clarity.</p>
+  </div>
+
+  <div class="route-cta-block">
+    <div class="route-cta-inner">
+      <p>If you would like a clear view of the situation before deciding what to do next, you can get in touch.</p>
+      <a href="contact.html" class="btn-primary-dark">Discuss your situation →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities. It operates as a structured intake, triage, and routing system for matters involving health and social care, mental capacity, public law, and related disputes. Where work is taken on, it is undertaken through the appropriate entity. Where regulated representation is required, we will say so.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+</script>
+</body>
+</html>
