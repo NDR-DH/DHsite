@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support for individuals and families — Dawson House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .route-wrap { padding: 160px 56px 120px; }
+  .route-intro { max-width: 600px; margin-bottom: 48px; }
+  .route-intro p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-intro p:last-child { margin-bottom: 0; }
+
+  .route-checklist { max-width: 600px; margin-bottom: 64px; }
+  .route-checklist-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-checklist-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-checklist ul { list-style: none; padding: 0; margin: 0; }
+  .route-checklist ul li { font-size: 16px; font-weight: 300; line-height: 1.7; color: var(--soft-slate); padding: 14px 0; border-bottom: 1px solid var(--light-grey); padding-left: 20px; position: relative; }
+  .route-checklist ul li::before { content: '—'; position: absolute; left: 0; color: var(--brass); font-family: var(--font-display); }
+  .route-checklist ul li:first-child { border-top: 1px solid var(--light-grey); }
+
+  .route-body-section { max-width: 680px; margin-bottom: 72px; }
+  .route-body-section-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-body-section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-body-section p { font-size: 17px; font-weight: 300; line-height: 1.85; color: var(--soft-slate); margin-bottom: 20px; }
+  .route-body-section p:last-child { margin-bottom: 0; }
+
+  .route-examples { max-width: 680px; margin-bottom: 72px; }
+  .route-examples-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-examples-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-example { padding: 28px 0; border-bottom: 1px solid var(--light-grey); }
+  .route-example:first-of-type { border-top: 1px solid var(--light-grey); }
+  .route-example-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 10px; line-height: 1.2; }
+  .route-example-desc { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-structure { max-width: 680px; margin-bottom: 88px; }
+  .route-structure-label { font-size: 11px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mist-teal); margin-bottom: 28px; display: flex; align-items: center; gap: 18px; }
+  .route-structure-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--mist-teal); flex-shrink: 0; }
+  .route-structure-items { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--light-grey); }
+  .route-structure-item { padding: 32px 28px; border-right: 1px solid var(--light-grey); }
+  .route-structure-item:last-child { border-right: none; }
+  .route-structure-item-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+  .route-structure-item-text { font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--soft-slate); }
+
+  .route-cta-block { background: var(--deep-slate); padding: 64px 56px; max-width: none; margin: 0 -56px 0; }
+  .route-cta-inner { max-width: 580px; }
+  .route-cta-block p { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); font-weight: 300; line-height: 1.4; color: var(--warm-white); margin-bottom: 36px; }
+  .btn-primary-dark { display: inline-block; padding: 17px 40px; background: var(--deep-teal); color: var(--warm-white); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+  .btn-primary-dark:hover { background: var(--soft-teal); transform: translateY(-1px); }
+
+  @media (max-width: 960px) {
+    .route-wrap { padding: 120px 28px 80px; }
+    .route-structure-items { grid-template-columns: 1fr; }
+    .route-structure-item { border-right: none; border-bottom: 1px solid var(--light-grey); }
+    .route-structure-item:last-child { border-bottom: none; }
+    .route-cta-block { padding: 56px 28px; margin: 0 -28px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="about.html">About</a></li>
+    <li class="nav-hide"><a href="index.html">Start here</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="route-wrap">
+  <div class="breadcrumb" style="margin-bottom: 48px;">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">—</span>
+    <a href="support.html">Get support or services in place</a>
+    <span class="breadcrumb-sep">—</span>
+    <span>Support for individuals and families</span>
+  </div>
+
+  <h1 style="font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 72px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; color: var(--charcoal); margin-bottom: 40px; max-width: 700px;">Support for individuals and families</h1>
+
+  <div class="route-intro">
+    <p>You may be dealing with a situation where the right care, support, or arrangement is not properly in place, but it is not yet clear what should be happening or how to move things forward.</p>
+    <p>The difficulty may be uncertainty, delay, lack of communication, or a sense that different people or organisations are involved but no one is taking clear responsibility.</p>
+    <p>This route is for situations where the aim is to understand what should be happening, bring some structure to the situation, and start to move it forward.</p>
+  </div>
+
+  <div class="route-checklist">
+    <p class="route-checklist-label">This route may be the right place to start if:</p>
+    <ul>
+      <li>you are not sure what should be happening, but something does not feel right</li>
+      <li>support has been discussed or promised, but is not in place or not working properly</li>
+      <li>an assessment or plan has been started but has not led to anything clear</li>
+      <li>you are dealing with more than one organisation and do not know who is responsible</li>
+      <li>the situation feels stuck and you need a clear way of moving it forward</li>
+    </ul>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this usually involves</p>
+    <p>Support work focuses on understanding the situation and helping it move forward in a clear and structured way.</p>
+    <p>That involves identifying what should be happening, what is currently missing or unclear, and what needs to happen next.</p>
+    <p>The aim is not to challenge immediately, but to bring clarity and direction to the situation so that it can start to progress.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">How this helps</p>
+    <p>Situations like this often feel confusing because there is no single point of clarity. Different people may say different things, or things may be agreed but not followed through.</p>
+    <p>This work helps by creating a clear picture of what is happening, what should be happening, and what steps are most likely to move things forward.</p>
+    <p>It gives you a structured way of understanding the situation and deciding what to do next, rather than feeling stuck or uncertain.</p>
+  </div>
+
+  <div class="route-examples">
+    <p class="route-examples-label">Examples of situations we help move forward</p>
+    <div class="route-example">
+      <h3 class="route-example-title">Support has been discussed but is not in place</h3>
+      <p class="route-example-desc">You have been told that support should be available, but nothing has actually been arranged, or what has been put in place does not meet the needs it was meant to address.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">An assessment or plan has not led to anything clear</h3>
+      <p class="route-example-desc">An assessment, care plan, or similar process has taken place, but the outcome is unclear, incomplete, or has not resulted in a workable arrangement.</p>
+    </div>
+    <div class="route-example">
+      <h3 class="route-example-title">Too many people involved, no clear answer</h3>
+      <p class="route-example-desc">Different organisations or professionals are involved, but it is not clear who is responsible or what is supposed to happen next.</p>
+    </div>
+  </div>
+
+  <div class="route-structure">
+    <p class="route-structure-label">How this work is usually structured</p>
+    <div class="route-structure-items">
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Defined piece of work</p>
+        <p class="route-structure-item-text">We focus on a specific situation or problem and work out what needs to happen next to move it forward.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Agreed fee</p>
+        <p class="route-structure-item-text">The work is scoped in advance, with a clear fee agreed before anything begins.</p>
+      </div>
+      <div class="route-structure-item">
+        <p class="route-structure-item-label">Only what is needed</p>
+        <p class="route-structure-item-text">We only ask for the information needed to understand and progress the situation. You do not need to gather everything at the outset.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What this can lead to</p>
+    <p>This work may result in a clearer plan, a better understanding of what should be happening, and practical steps that start to move the situation forward.</p>
+    <p>It may also show that the situation needs to move into a more formal review or dispute if the underlying problem cannot be resolved through progression alone.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">What you receive from support work</p>
+    <p>Support work is designed to give you clarity, direction, and a way forward.</p>
+    <p>You will usually receive:</p>
+    <p>— a clear explanation of what should be happening<br>
+    — a structured understanding of the situation<br>
+    — identification of what is missing or unclear<br>
+    — practical next steps to move things forward<br>
+    — where appropriate, guidance on how to engage with the relevant organisations</p>
+    <p>This is a defined piece of work focused on helping you move forward, not ongoing open-ended advice.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">How this fits with other routes</p>
+    <p>Some situations can be resolved by bringing structure and clarity.</p>
+    <p>Others may need to move into review or dispute if the issue is not simply one of delay or confusion.</p>
+    <p>This route helps you understand where your situation sits and what should happen next. You do not need to decide that at the outset. That is part of the work.</p>
+  </div>
+
+  <div class="route-body-section">
+    <p class="route-body-section-label">Position and regulatory context</p>
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities.</p>
+    <p>This type of support work is advisory and can be carried out without the cost and structure of formal legal representation at this stage.</p>
+    <p>If your situation requires formal legal work, we will explain that clearly and help you understand what to do next.</p>
+  </div>
+
+  <div class="route-cta-block">
+    <div class="route-cta-inner">
+      <p>If you would like help understanding your situation and moving it forward, you can get in touch to discuss a defined piece of work.</p>
+      <a href="contact.html" class="btn-primary-dark">Discuss your situation →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities. It operates as a structured intake, triage, and routing system for matters involving health and social care, mental capacity, public law, and related disputes. Where work is taken on, it is undertaken through the appropriate entity. Where regulated representation is required, we will say so.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+</script>
+</body>
+</html>
