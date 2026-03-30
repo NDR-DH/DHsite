@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Dawson House | Dawson House</title>
+<meta name="description" content="Get in touch with Dawson House. A short outline of your situation is enough to start.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dawsonhouse.org.uk/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 89px);
+    margin-top: 89px;
+  }
+
+  .contact-left {
+    padding: 96px 72px 96px 56px;
+    border-right: 1px solid var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .contact-left h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+  }
+
+  .contact-left-opening p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--soft-slate);
+    max-width: 400px;
+  }
+
+  .contact-expect {
+    padding-top: 44px;
+    border-top: 1px solid var(--light-grey);
+  }
+
+  .contact-expect-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mist-teal);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .contact-expect-label::before {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--mist-teal);
+    flex-shrink: 0;
+  }
+
+  .contact-expect-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    align-items: baseline;
+  }
+
+  .contact-expect-item:last-child { margin-bottom: 0; }
+
+  .contact-expect-marker {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--greige);
+    flex-shrink: 0;
+    width: 18px;
+  }
+
+  .contact-expect-text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--soft-slate);
+  }
+
+  .contact-direct {
+    padding-top: 44px;
+    border-top: 1px solid var(--light-grey);
+  }
+
+  .contact-direct p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--soft-slate);
+  }
+
+  .contact-direct a {
+    color: var(--deep-teal);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .contact-direct a:hover { opacity: 0.7; }
+
+  .contact-reassurance {
+    padding-top: 44px;
+    border-top: 1px solid var(--light-grey);
+  }
+
+  .contact-reassurance p {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--deep-slate);
+    opacity: 0.65;
+    max-width: 360px;
+  }
+
+  .contact-right {
+    padding: 96px 56px 96px 72px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--deep-slate);
+    opacity: 0.55;
+    margin-bottom: 10px;
+  }
+
+  .form-field { margin-bottom: 32px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--light-grey);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--deep-slate);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    transition: border-color 0.25s;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--deep-teal);
+  }
+
+  input::placeholder,
+  textarea::placeholder { color: rgba(47,50,53,0.28); }
+
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238EA2B0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    padding-right: 28px;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 140px;
+    line-height: 1.75;
+    padding-top: 14px;
+  }
+
+  .urgency-detail {
+    display: none;
+    margin-top: 20px;
+  }
+
+  .urgency-detail.visible {
+    display: block;
+  }
+
+  .form-submit-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .form-submit {
+    display: inline-block;
+    padding: 17px 44px;
+    background: var(--deep-teal);
+    color: var(--warm-white);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .form-submit:hover {
+    background: var(--soft-teal);
+    transform: translateY(-1px);
+  }
+
+  .form-privacy {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--soft-slate);
+    opacity: 0.55;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 960px) {
+    .contact-page { grid-template-columns: 1fr; margin-top: 76px; }
+    .contact-left { padding: 60px 28px 48px; border-right: none; border-bottom: 1px solid var(--light-grey); gap: 40px; }
+    .contact-right { padding: 48px 28px 80px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo" aria-label="Dawson House home">
+    <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="#2F3235" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6H92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+    <span class="nav-wordmark">Dawson House</span>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-hide"><a href="about.html">About</a></li>
+    <li class="nav-hide"><a href="mediation.html">Mediation</a></li>
+    <li class="nav-hide"><a href="index.html">Start here</a></li>
+    <li><a href="contact.html" class="nav-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="contact-page">
+
+  <div class="contact-left">
+
+    <div class="contact-left-opening">
+      <h1>Start with your situation.</h1>
+      <p>You do not need to have everything worked out before you contact us. A short outline is enough for us to understand whether we may be able to help.</p>
+    </div>
+
+    <div class="contact-expect">
+      <p class="contact-expect-label">What to expect</p>
+      <div class="contact-expect-item">
+        <span class="contact-expect-marker">—</span>
+        <p class="contact-expect-text">We will review what you send and consider whether it is something we can assist with.</p>
+      </div>
+      <div class="contact-expect-item">
+        <span class="contact-expect-marker">—</span>
+        <p class="contact-expect-text">Sending an enquiry does not commit either side to further work.</p>
+      </div>
+      <div class="contact-expect-item">
+        <span class="contact-expect-marker">—</span>
+        <p class="contact-expect-text">Where we can take the matter forward, the next step is a defined piece of work with scope and cost agreed in advance.</p>
+      </div>
+      <div class="contact-expect-item">
+        <span class="contact-expect-marker">—</span>
+        <p class="contact-expect-text">If the matter would be better handled elsewhere, we will say so.</p>
+      </div>
+    </div>
+
+    <div class="contact-direct">
+      <p>If email is easier, you can also contact us directly at <a href="mailto:hello@dawsonhouse.org.uk">hello@dawsonhouse.org.uk</a></p>
+    </div>
+
+    <div class="contact-reassurance">
+      <p>We will be direct about whether we can help, and if we are not the right people, we will say so.</p>
+    </div>
+
+  </div>
+
+  <div class="contact-right">
+
+    <form
+      method="POST"
+      action="https://formspree.io/f/xeernqoz"
+      accept-charset="UTF-8"
+    >
+      <input type="hidden" name="_subject" value="New Dawson House enquiry">
+      <input type="hidden" name="_next" value="https://dawsonhouse.org.uk/thankyou.html">
+      <input type="hidden" name="_autoresponse" value="Thank you for getting in touch with Dawson House.
+
+We have received your enquiry and will review it shortly. You can expect to hear from us within two working days.
+
+You do not need to do anything else at this stage.
+
+If your matter is urgent and you have not heard from us within that time, please contact us directly at hello@dawsonhouse.org.uk.
+
+Dawson House
+dawsonhouse.org.uk
+
+---
+This is an automated acknowledgement. Please do not reply to this email. If you need to add anything to your enquiry, please email hello@dawsonhouse.org.uk directly.">
+
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label" for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="role">Your role in this situation</label>
+        <select id="role" name="role" required>
+          <option value="" disabled selected></option>
+          <option value="I am the person affected">I am the person affected</option>
+          <option value="I am a family member or carer">I am a family member or carer</option>
+          <option value="I am a deputy or attorney">I am a deputy or attorney</option>
+          <option value="I am a professional or organisation">I am a professional or organisation</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="situation">Brief outline of the situation</label>
+        <textarea id="situation" name="situation" placeholder="Who is involved, what has happened, and what you are hoping to achieve. A few sentences is enough." required></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="urgency">Is there any urgency or deadline we should know about?</label>
+        <select id="urgency" name="urgency" required>
+          <option value="" disabled selected></option>
+          <option value="No immediate pressure">No immediate pressure</option>
+          <option value="Some time sensitivity">Some time sensitivity</option>
+          <option value="Yes — there is a deadline or urgent issue">Yes — there is a deadline or urgent issue</option>
+        </select>
+        <div class="urgency-detail" id="urgency-detail">
+          <input type="text" id="urgency_detail" name="urgency_detail" placeholder="Please give brief details of the deadline or urgent issue">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="referral">How did you hear about Dawson House?</label>
+        <input type="text" id="referral" name="referral" placeholder="e.g. a referral, search, social media">
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="form-submit">Send your enquiry</button>
+        <p class="form-privacy">Treated in confidence. Sending an enquiry does not create a legal or professional relationship.</p>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo" aria-label="Dawson House">
+      <svg viewBox="0 0 835 1000" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="rgba(246,244,241,0.5)" d="M357.2,21.1H22v957.8h794V480C816,226.5,610.6,21.1,357.2,21.1z M92.3,91.5h264.8c214.2,0,388.5,174.3,388.5,388.5v87H414V308.9h-74.4v599.6—92.3V91.5z M414,908.5V636.5h331.6v272.1H414z"/></svg>
+      <span class="footer-name">Dawson House</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="mediation.html">Mediation</a></li>
+      <li><a href="index.html">Start here</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Dawson House &mdash; dawsonhouse.org.uk</p>
+  </div>
+  <div class="footer-compliance">
+    <p>Dawson House is not a firm of solicitors and does not undertake reserved legal activities. It operates as a structured intake, triage, and routing system for matters involving health and social care, mental capacity, public law, and related disputes. Where work is taken on, it is undertaken through the appropriate entity. Where regulated representation is required, we will say so.</p>
+  </div>
+  <p class="footer-disclosure" style="font-size:11px;line-height:1.7;color:rgba(246,244,241,0.22);max-width:760px;margin-top:12px;">Dawson House is a trading name of Dawson Reith &amp; Co Ltd. The company does not undertake reserved legal activities. Where legal proceedings are required, work is carried out through appropriately regulated providers.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+  const urgencySelect = document.getElementById('urgency');
+  const urgencyDetail = document.getElementById('urgency-detail');
+
+  urgencySelect.addEventListener('change', function() {
+    if (this.value === 'Yes — there is a deadline or urgent issue') {
+      urgencyDetail.classList.add('visible');
+    } else {
+      urgencyDetail.classList.remove('visible');
+    }
+  });
+</script>
+
+</body>
+</html>
